@@ -8,3 +8,4 @@ Relatório Seção 2:
 VS Code, Android Studio e até mesmo o próprio Flutter.
 
 Relatório Seção 3:
+O começo da Seção é a criação de um projeto Flutter a partir do Android Studio, explicando como a emulação funciona e criando um emulador além de explicar como utilizar seu próprio celular para testar os aplicativos Flutter, a partir da depuração USB do celular o que testei no meu dispositivo e funcionou corretamente Após isso, o professor diz que iremos começar a estudar sobre Dart, antes de começar a estudar Flutter.
