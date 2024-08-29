@@ -1,2 +1,10 @@
 Relatório Seção 1:
-A Seção 1 fala sobre as vantagens do Flutter, sua capacidade de utilizar o mesmo codigo
+	A Seção 1 fala sobre as vantagens do Flutter, sua capacidade de utilizar o mesmo codigo tanto para Android como para IOS. É uma ferramenta open source, o que pode diminuir o tempo de desenvolvimento, graças a essa vantagem.
+	Após isso, explica de forma bem consisa como Widgets funcionam e sobre como o Flutter tem um desenvolvimento orientado em design, além de mostrar dados que dão motivos para estuda-lo
+	Como é uma seção introdutória, ainda não foi ensinado nada pratico, apenas motivos para estudar o Flutter.
+
+Relatório Seção 2:
+	A seção 2 é um modúlo que te ensina a instalar tudo o que for necessário para que possamos desenvolver com Flutter. 
+VS Code, Android Studio e até mesmo o próprio Flutter.
+
+Relatório Seção 3:
