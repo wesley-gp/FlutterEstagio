@@ -1,1 +1,2 @@
 Relatório Seção 1:
+A Seção 1 fala sobre as vantagens do Flutter, sua capacidade de utilizar o mesmo codigo
