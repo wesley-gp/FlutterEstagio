@@ -16,7 +16,7 @@ Relatório Seção 4:
 
 Relatório Seção 5:
 	O assunto principal desta seção é as funções, como elas criam uma maior praticidade para o desenvolvimento, já que diminuiria a quantidade de repetição no código, pois elas conseguem referir algum conjunto de comandos e ser reutilizada em outras linhas durante o desenvolvimento, além de explicar sobre parâmentros, para complementar o conteúdo inicial de função. É uma seção que considero complementar à seção 4, já que aprofunda os contéudos de Dart básico e lógica da programação.
-	Após isso o professor explica sobre a nulidade da variáveis em Dart e suas aplicações, além de como converter uma variável nullable para uma non-nullable
+	Após isso o professor explica sobre a nulidade da variáveis em Dart e suas aplicações, além de como converter uma variável nullable para uma non-nullable. Ao final da Seção, ele fala brevemente sobre escopo.
 
 
 
