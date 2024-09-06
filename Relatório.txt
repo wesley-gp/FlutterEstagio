@@ -30,12 +30,17 @@ Relatório Seção 7:
 	O quarto tópico é a diferença entre const e final.
 Const é uma variavel congelada em tempo de compilação, desta forma, logo em sua atribuição, a linguagem dart já coloca o valor atribuído em qualquer lugar com a constante, graças a isso, qualquer mudança em uma constante causa um erro de compilação. Enquanto isso o final é para valores que são atribuidos durante a execução do codigo, mas que também não podem ser alterados, também causando erros caso o valor da variavel final seja trocado.
 	o último fala sobre o operador de cascata, que dá a possibilidade de adicionar diversos métodos em sequência.
-	Relatório Seção 8:
+
+Relatório Seção 8:
 	Essa seção é uma introdução a orientação a objetos, explicando o que é uma classe, um atributo, um método, objeto, entre outros conceitos básicos de P.O.O.
 Após isso, o professor explica sobre contrutores, como ele é utilizado para deixar mais simples a atribuição dos atributos de determinado objeto. Com isso em mente, o professor começa a explicar sobre getters e setter, como eles podem ser utilizados para inferir um atributo privado e criar blocos de codigos dentro desse processo.
 	Após essas explicações o professor explica sobre duas propriedades dos atributos chamadas static e late, que funcionam da seguinte maneira:
 Static: um atributo static se referencia a propria classe e não ao objeto, dessa forma chamamos a propria classe para podermos utilizar esse atributo ou método.
 Late: é um tipo de atributo em que antes de que ela seja lida, é necessaria que em algum momento ela seja iniciada, mas não necessariamente na compilação inicial. 
 
+Relatório Seção 9:
+	Essa seção se trata de herança e polimorfismo. Primeiramente o professor explica a utilidade de uma herança, com ela podendo diminuir a quantidade de codigo repetido caso varias classes podessem extender de uma, além disso ele fala sobre como a classe base consegue extender todas as classes derivadas dentro de listas ou funções, o que é útil para quando não temos certeza de qual classe derivada estamos falando. Além disso, o professor explica como rescrever metódos em classes derivadas.
+	Depois dessa explicação, o instrutor fala sobre a keyword super, que basicamente pega o valor do método ou atributo da classe base, ignorando sua reescrição na classe derivada. O que pode ser útil para quando queremos apenas adicionar algum bloco de codigo a mais ao que já vem feito na classe base. 
+	Depois disso, o professor explica sobre classes abstratas, que não podem ser instânciadas, apenas extendidas para classes derivadas, que podem ser abstratas ou não. 
 
 
