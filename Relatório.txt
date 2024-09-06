@@ -29,6 +29,13 @@ Relatório Seção 7:
 	 O terceiro tópico desse modúlo são os Enumeradores, que juntamente com o switch pode facilitar sua busca em grandes quantidades de dados, essa funcionalidade associa um valor inteiro para cada tipo de elemento. 
 	O quarto tópico é a diferença entre const e final.
 Const é uma variavel congelada em tempo de compilação, desta forma, logo em sua atribuição, a linguagem dart já coloca o valor atribuído em qualquer lugar com a constante, graças a isso, qualquer mudança em uma constante causa um erro de compilação. Enquanto isso o final é para valores que são atribuidos durante a execução do codigo, mas que também não podem ser alterados, também causando erros caso o valor da variavel final seja trocado.
-	o último fala sobre o operador de cascata, que dá a possibilidade de adicionar diversos métodos em sequência.	
+	o último fala sobre o operador de cascata, que dá a possibilidade de adicionar diversos métodos em sequência.
+	Relatório Seção 8:
+	Essa seção é uma introdução a orientação a objetos, explicando o que é uma classe, um atributo, um método, objeto, entre outros conceitos básicos de P.O.O.
+Após isso, o professor explica sobre contrutores, como ele é utilizado para deixar mais simples a atribuição dos atributos de determinado objeto. Com isso em mente, o professor começa a explicar sobre getters e setter, como eles podem ser utilizados para inferir um atributo privado e criar blocos de codigos dentro desse processo.
+	Após essas explicações o professor explica sobre duas propriedades dos atributos chamadas static e late, que funcionam da seguinte maneira:
+Static: um atributo static se referencia a propria classe e não ao objeto, dessa forma chamamos a propria classe para podermos utilizar esse atributo ou método.
+Late: é um tipo de atributo em que antes de que ela seja lida, é necessaria que em algum momento ela seja iniciada, mas não necessariamente na compilação inicial. 
+
 
 
