@@ -19,8 +19,11 @@ Relatório Seção 5:
 	Após isso o professor explica sobre a nulidade da variáveis em Dart e suas aplicações, além de como converter uma variável nullable para uma non-nullable. Ao final da Seção, ele fala brevemente sobre escopo.
 
 Relatório Seção 6:
-	O assunto desta seção é principalmente sobre coleções, mais especificamente listas e maps. O professor explica sobre as funcionalidades de uma lista e como é a sytex dela.
+	O assunto desta seção é principalmente sobre coleções, mais especificamente listas e maps. O professor explica sobre as listas e como é a sytex dela, após isso ele explica sobre maps e suas características, e suas diferenças com as listas.
+	Depois dessa explicação básica sobre listas e mapas. o professor começa a explicar algumas funcionalidades de ambas, além de explicar sobre Null Assertion, para que tirar a nulidade de um valor dentro de uma lista ou mapa e as propriedades do Null-Safety dentro de listas e mapas.
+	No final da seção, o professor começa explicar sobre JSON, já que esta notação é analisado pelo dart como um mapa. Um JSON é uma notação que é muito utilizada para estruturar dados em formato de texto. No dart, a conversão de um JSON para um mapa é feito a partir da importação de uma biblioteca chamada "dart.convert". Com a utilização do JSON, podemos fazer requisições em bancos de dados, tranferir dados entre aplicações a partir de um API, etc.
 
+Relatório Seção 7:
 
 
 
