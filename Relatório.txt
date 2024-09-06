@@ -44,6 +44,6 @@ Relatório Seção 9:
 	Depois disso, o professor explica sobre classes abstratas, que não podem ser instânciadas, apenas extendidas para classes derivadas, que podem ser abstratas ou não. 
 
 Relatório Seção 10:
-	Essa seção começa o curso de Flutter, com um aplicativo de contar pessoas em um estabelecimento,
+	Essa seção começa o curso de Flutter, com um aplicativo de contar pessoas em um estabelecimento, o projeto está nesse mesmo repositório, na pasta conta_pessoas. Até o momento fiz a parte visual, estou começando a inserir as funcionalidades, que são até que simples.
 
 
