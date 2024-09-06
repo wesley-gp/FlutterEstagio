@@ -43,4 +43,7 @@ Relatório Seção 9:
 	Depois dessa explicação, o instrutor fala sobre a keyword super, que basicamente pega o valor do método ou atributo da classe base, ignorando sua reescrição na classe derivada. O que pode ser útil para quando queremos apenas adicionar algum bloco de codigo a mais ao que já vem feito na classe base. 
 	Depois disso, o professor explica sobre classes abstratas, que não podem ser instânciadas, apenas extendidas para classes derivadas, que podem ser abstratas ou não. 
 
+Relatório Seção 10:
+	Essa seção começa o curso de Flutter, com um aplicativo de contar pessoas em um estabelecimento,
+
 
