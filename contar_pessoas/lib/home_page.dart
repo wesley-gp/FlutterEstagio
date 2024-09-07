@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-   const HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -9,14 +9,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int contador = 0;
-
+  bool get isFull => contador == 20;
+  bool get isEmpty => contador == 0;
   void decremento() {
-    contador--;
+    setState(() {
+      contador--;
+    });
     print("decremento");
   }
 
   void incremento() {
-    contador++;
+    setState(() {
+      contador++;
+    });
+
     print("incremento");
   }
 
@@ -33,14 +39,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Pode entrar!",
-              style: TextStyle(
+              Text(
+                isFull?"lotado!":"Pode entrar!",
+                style: TextStyle(
                   fontSize: 42,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  color:isFull? Colors.red : Colors.white),
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(50),
               child: Text(
                 "$contador",
@@ -52,12 +58,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor:isEmpty?  const Color.fromARGB(100, 255, 255, 255): Colors.white,
                       fixedSize: const Size(100, 100),
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(24))),
-                  onPressed: decremento,
+                  onPressed: isEmpty? null : decremento,
                   child: const Text(
                     "Sair",
                     style: TextStyle(
@@ -69,12 +75,12 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 32),
                 TextButton(
                   style: TextButton.styleFrom(
-                      backgroundColor: Colors.white,
+                      backgroundColor: isFull?  const Color.fromARGB(100, 255, 255, 255): Colors.white,
                       fixedSize: const Size(100, 100),
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(24))),
-                  onPressed: incremento,
+                  onPressed: isFull? null: incremento,
                   child: const Text(
                     "Entrar",
                     style: TextStyle(
