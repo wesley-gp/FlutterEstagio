@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:lista_fazer/models/task.dart';
 
 
@@ -16,7 +17,7 @@ class TaskItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
            Text(
-            task.data.toString(),
+            DateFormat('dd/MM/yy - HH:mm').format(task.data),//task.data.toString(),
             style: const TextStyle(fontSize: 12),
           ),
           Text(
