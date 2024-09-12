@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lista_fazer/widgets/task_item.dart';
+import 'package:lista_fazer/models/task.dart';
 
 class ToDoList extends StatefulWidget {
   const ToDoList({super.key});
@@ -9,14 +10,14 @@ class ToDoList extends StatefulWidget {
 }
 
 class _ToDoListState extends State<ToDoList> {
-  List<String> tasks = [];
+  List<Task> tasksList = [];
   final TextEditingController taskController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Center(
-            child: Padding(
+        body: Center(
+          child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -38,13 +39,16 @@ class _ToDoListState extends State<ToDoList> {
                         backgroundColor: const Color(0xff00d7f3),
                         padding: const EdgeInsets.all(13),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)
-                          ),
+                            borderRadius: BorderRadius.circular(8)),
                       ),
                       onPressed: () {
                         String text = taskController.text;
                         setState(() {
-                          tasks.add(text);
+                          Task newTask = Task(
+                            title: text,
+                            data: DateTime.now()
+                          );
+                          tasksList.add(newTask);
                           taskController.clear();
                         });
                       },
@@ -60,8 +64,10 @@ class _ToDoListState extends State<ToDoList> {
                 ListView(
                   shrinkWrap: true,
                   children: [
-                    for (String task in tasks)
-                      TaskItem(task),
+                    for (Task task in tasksList)
+                      TaskItem(
+                        task:task,
+                      ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -69,21 +75,21 @@ class _ToDoListState extends State<ToDoList> {
                   children: [
                     Expanded(
                       child: Text(
-                        "você possui ${tasks.length} tarefas pendentes",
+                        "você possui ${tasksList.length} tarefas pendentes",
                       ),
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
-                          backgroundColor: const Color(0xff00d7f3),
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.all(13),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
+                        backgroundColor: const Color(0xff00d7f3),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.all(13),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
                         ),
+                      ),
                       onPressed: () {
                         setState(() {
-                          tasks.clear();
+                          tasksList.clear();
                         });
                       },
                       child: const Text("Limpar Tudo"),
