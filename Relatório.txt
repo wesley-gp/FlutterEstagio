@@ -55,6 +55,6 @@ Relatório Seção 12:
 	2. Criação de uma list view. Mesmo que conheça o conceito pelos meus conhecimentos em C#, nunca fiz uma em Flutter, o que com certeza vai ser útil tanto para esse projeto, como para os próximos.
 	3. Animações para Flutter web, com base no mouse. Seria meu primeiro passo para entender a criar animações em Flutter.	
 	
-	Após o começo da criação do projeto, aprendi também sobre o widget Extended, que resolveu um problema que estava tendo na criação de uma row com um TextField. 
+	Após o começo da criação do projeto, aprendi também sobre o widget Expanded, que resolveu um problema que estava tendo na criação de uma row com um TextField. 
 
 
