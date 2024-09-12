@@ -49,3 +49,9 @@ Relatório Seção 10:
 Relatório Seção 11:
 	Essa seção é complementar a seção 10, e tem foco em o que fazer quando seu aplicativo está pronto. Esse tópico ensina a assinar um aplicativo, como mudar a foto do aplicativo, seu nome e tipos de compilação.
 
+Relatório Seção 12:
+	Essa seção se baseia na criação de um segundo projeto, que estará alocado nesse mesmo repositório, na pasta lista_fazer. O projeto é a criação de uma lista de tarefas. Durante a exposição do aplicativo completo, percebi que iria aprender novas funcionalidades que ainda não tinha estudado anteriormente, que seriam:
+	1. Criação de um aplicativo que funcione tanto mobile como web, e que o sistema consiga indentificar em que local estou rodando esse aplicativo, fazendo alterações dependendo da plataforma.
+	2. Criação de uma list view. Mesmo que conheça o conceito pelos meus conhecimentos em C#, nunca fiz uma em Flutter, o que com certeza vai ser útil tanto para esse projeto, como para os próximos.
+	3. Animações para Flutter web, com base no mouse. Seria meu primeiro passo para entender a criar animações em Flutter.
+	
