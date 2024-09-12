@@ -46,4 +46,6 @@ Relatório Seção 9:
 Relatório Seção 10:
 	Essa seção começa o curso de Flutter, com um aplicativo de contar pessoas em um estabelecimento, o projeto está nesse mesmo repositório, na pasta conta_pessoas. Terminei de fazer as funcionalidades propostas no curso, que seriam basicamente criar um contador que trava quando chega em 20, já que seria o valor maximo de pessoas que poderiam estar dentro do estabelecimento.
 
+Relatório Seção 11:
+	Essa seção é complementar a seção 10, e tem foco em o que fazer quando seu aplicativo está pronto. Esse tópico ensina a assinar um aplicativo, como mudar a foto do aplicativo, seu nome e tipos de compilação.
 
