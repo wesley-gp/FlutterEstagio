@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       contador--;
     });
-    print("decremento");
+    
   }
 
   void incremento() {
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       contador++;
     });
 
-    print("incremento");
+    
   }
 
   @override
