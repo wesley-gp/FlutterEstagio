@@ -62,4 +62,6 @@ Relatório Seção 12:
 
 Relatório seção 13:
 	Essa seção é bem curta, é apenas para que tenhamos uma base de programação assíncrona, pois será importante para o resto do projeto lista_fazer.
+Relatório seção 14:
+	Foi a continuação da seção 12, e o fim das aulas atualizadas do curso. A aplicação ainda não começou a ter compatibilidade com a web, já que as aulas desse projeto acabaram, porém já está completamente funcional no mobile 
 
