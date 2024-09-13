@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_fazer/repositories/task_repository.dart';
 import 'package:lista_fazer/widgets/task_item.dart';
 import 'package:lista_fazer/models/task.dart';
 
@@ -11,10 +12,25 @@ class ToDoList extends StatefulWidget {
 
 class _ToDoListState extends State<ToDoList> {
   List<Task> tasksList = [];
+
   Task? deletedTask;
   int? deletedTaskPos;
+
   bool get isEmpty => tasksList.isEmpty;
+
   final TextEditingController taskController = TextEditingController();
+  final TaskRepository taskRepository = TaskRepository();
+
+  @override
+  void initState() {
+    super.initState();
+    taskRepository.getTaskList().then((value) {
+      setState(() {
+        tasksList = value;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,8 +65,9 @@ class _ToDoListState extends State<ToDoList> {
                       setState(() {
                         Task newTask = Task(title: text, data: DateTime.now());
                         tasksList.add(newTask);
-                        taskController.clear();
                       });
+                      taskController.clear();
+                      taskRepository.saveTaskList(tasksList);
                     },
                     child: const Icon(
                       Icons.add,
@@ -87,7 +104,7 @@ class _ToDoListState extends State<ToDoList> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    onPressed:isEmpty? null: showConfirmationDel,
+                    onPressed: isEmpty ? null : showConfirmationDel,
                     child: const Text("Limpar Tudo"),
                   ),
                 ],
