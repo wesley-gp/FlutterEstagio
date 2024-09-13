@@ -15,9 +15,9 @@ class _ToDoListState extends State<ToDoList> {
 
   Task? deletedTask;
   int? deletedTaskPos;
-
+  String? errorText;
   bool get isEmpty => tasksList.isEmpty;
-
+  double marginButtom = 0;
   final TextEditingController taskController = TextEditingController();
   final TaskRepository taskRepository = TaskRepository();
 
@@ -46,33 +46,49 @@ class _ToDoListState extends State<ToDoList> {
                   Expanded(
                     child: TextField(
                       controller: taskController,
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
                           labelText: "Adicione uma Tarefa",
+                          errorText: errorText,
                           hintText: "Ex: Escovar os dentes"),
                     ),
                   ),
                   const SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff00d7f3),
-                      padding: const EdgeInsets.all(13),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                    onPressed: () {
-                      String text = taskController.text;
-                      setState(() {
-                        Task newTask = Task(title: text, data: DateTime.now());
-                        tasksList.add(newTask);
-                      });
-                      taskController.clear();
-                      taskRepository.saveTaskList(tasksList);
-                    },
-                    child: const Icon(
-                      Icons.add,
-                      size: 30,
-                      color: Colors.white,
+                  Container(
+                    margin: EdgeInsets.only(bottom: marginButtom),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xff00d7f3),
+                        padding: const EdgeInsets.all(13),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                      ),
+                      onPressed: () {
+                        String text = taskController.text;
+                        if (text.isEmpty) {
+                          setState(() {
+                            errorText = 'a tarefa está vazia!';
+                            marginButtom = 20;
+                          });
+
+                          return;
+                        }
+
+                        setState(() {
+                          errorText = null;
+                          marginButtom = 0;
+                          Task newTask =
+                              Task(title: text, data: DateTime.now());
+                          tasksList.add(newTask);
+                        });
+                        taskController.clear();
+                        taskRepository.saveTaskList(tasksList);
+                      },
+                      child: const Icon(
+                        Icons.add,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
@@ -122,6 +138,7 @@ class _ToDoListState extends State<ToDoList> {
     setState(() {
       tasksList.remove(task);
     });
+    taskRepository.saveTaskList(tasksList);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -136,6 +153,7 @@ class _ToDoListState extends State<ToDoList> {
             setState(() {
               tasksList.insert(deletedTaskPos!, deletedTask!);
             });
+            taskRepository.saveTaskList(tasksList);
           },
         ),
         duration: const Duration(seconds: 5),
@@ -162,6 +180,7 @@ class _ToDoListState extends State<ToDoList> {
               setState(() {
                 tasksList.clear();
               });
+              taskRepository.saveTaskList(tasksList);
             },
             child: const Text("Excluir"),
           ),
