@@ -13,6 +13,7 @@ class _ToDoListState extends State<ToDoList> {
   List<Task> tasksList = [];
   Task? deletedTask;
   int? deletedTaskPos;
+  bool get isEmpty => tasksList.isEmpty;
   final TextEditingController taskController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -86,11 +87,7 @@ class _ToDoListState extends State<ToDoList> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    onPressed: () {
-                      setState(() {
-                        tasksList.clear();
-                      });
-                    },
+                    onPressed:isEmpty? null: showConfirmationDel,
                     child: const Text("Limpar Tudo"),
                   ),
                 ],
@@ -123,9 +120,35 @@ class _ToDoListState extends State<ToDoList> {
               tasksList.insert(deletedTaskPos!, deletedTask!);
             });
           },
-          
         ),
         duration: const Duration(seconds: 5),
+      ),
+    );
+  }
+
+  void showConfirmationDel() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Limpar tudo"),
+        content: const Text("Tem certeza que deseja apagar TODAS as tarefas?"),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("Cancelar"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              setState(() {
+                tasksList.clear();
+              });
+            },
+            child: const Text("Excluir"),
+          ),
+        ],
       ),
     );
   }
