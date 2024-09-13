@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lista_fazer/widgets/task_item.dart';
 import 'package:lista_fazer/models/task.dart';
 
+
 class ToDoList extends StatefulWidget {
   const ToDoList({super.key});
 
@@ -67,6 +68,7 @@ class _ToDoListState extends State<ToDoList> {
                     for (Task task in tasksList)
                       TaskItem(
                         task:task,
+                        onDelete:onDelete,
                       ),
                   ],
                 ),
@@ -102,5 +104,10 @@ class _ToDoListState extends State<ToDoList> {
         ),
       ),
     );
+  }
+  void onDelete(Task task){
+    setState(() {
+      tasksList.remove(task);
+    });
   }
 }
