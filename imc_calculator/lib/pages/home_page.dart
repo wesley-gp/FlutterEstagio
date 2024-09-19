@@ -30,14 +30,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Icon(
               Icons.person_outlined,
-              size: 150,
+              size: 120,
               color: Colors.green,
             ),
             TextField(
@@ -72,10 +72,10 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 String kgText = kgField.text;
                 double? kgValue = double.tryParse(kgText);
-
+                
                 String heightText = heightField.text;
                 double? heightValue = double.tryParse(heightText);
-
+                
                 if (kgValue == null || heightValue == null) {
                   setState(() {
                     if (kgValue == null) {
