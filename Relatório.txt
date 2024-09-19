@@ -62,6 +62,9 @@ Relatório Seção 12:
 
 Relatório seção 13:
 	Essa seção é bem curta, é apenas para que tenhamos uma base de programação assíncrona, pois será importante para o resto do projeto lista_fazer.
-Relatório seção 14:
-	Foi a continuação da seção 12, e o fim das aulas atualizadas do curso. A aplicação ainda não começou a ter compatibilidade com a web, já que as aulas desse projeto acabaram, porém já está completamente funcional no mobile 
 
+Relatório seção 14:
+	Foi a continuação da seção 12, e o fim das aulas atualizadas do curso. A aplicação ainda não começou a ter compatibilidade com a web, já que as aulas desse projeto acabaram, porém já está completamente funcional no mobile, utilizei a biblioteca shared_preferences para criar a a última funcionalidade proposta para a versão mobile, que seria a que mesmo reiniciando a aplicação, a lista não se desfizesse.
+
+Relatório seção 15:
+	É o começo das aulas antes da atualização null-safety do flutter, a seção se baseia em construir um aplicativo simples para calcular IMC, como ele era definitivamente mais simples que o anterior, comecei a cria-lo apenas com a aula inicial que apresentava a versão final do aplicativo. 
