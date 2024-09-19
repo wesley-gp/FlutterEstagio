@@ -47,10 +47,11 @@ class _ToDoListState extends State<ToDoList> {
                     child: TextField(
                       controller: taskController,
                       decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
-                          labelText: "Adicione uma Tarefa",
-                          errorText: errorText,
-                          hintText: "Ex: Escovar os dentes"),
+                        border: const OutlineInputBorder(),
+                        labelText: "Adicione uma Tarefa",
+                        errorText: errorText,
+                        hintText: "Ex: Escovar os dentes"
+                      ),
                     ),
                   ),
                   const SizedBox(width: 8),
