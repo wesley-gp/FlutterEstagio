@@ -68,3 +68,10 @@ Relatório seção 14:
 
 Relatório seção 15:
 	É o começo das aulas antes da atualização null-safety do flutter, a seção se baseia em construir um aplicativo simples para calcular IMC, como ele era definitivamente mais simples que o anterior, comecei a cria-lo apenas com a aula inicial que apresentava a versão final do aplicativo. 
+	após terminar o aplicativo, fui ver as aulas de criação do mesmo, em busca de alguma funcionalidade que deixei passar, das medidas exatas de padding ou do tamanho de icones, além de algum método diferente para criar o aplicativo. Percebi que criei um sistema de validação muito diferente do professor, enquanto utilizei trycatch e trabalhei com a nulidade, o professor utilizou o validation do widget form, como ambos os metodos funcionaram, manti o meu. 
+	Como o app era bem simples, apenas aprendi sobre o widget form, que não tinha sido algo que tinha me aprofundado anteriormente. 
+
+Relatório seção 16:
+	Essa seção se baseia na criação de um aplicativo que converte moedas a partir de uma API. Não parece um aplicativo dificil de ser produzido, mas vai ser interessante trabalhar mais com JSON e future, já que utilizei ele apenas no projeto lista_fazer, e de forma pouco aprofundada.
+	Creio que esse aplicativo ainda é mais fácil de ser feito do que o lista_fazer, mas é só minha concepção inicial.
+	
