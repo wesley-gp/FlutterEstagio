@@ -9,6 +9,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String textMsg = "Informe seus dados!";
+  String? kgErrorText;
+  String? heightErrorText;
+  TextEditingController kgField = TextEditingController();
+  TextEditingController heightField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +40,28 @@ class _HomePageState extends State<HomePage> {
               size: 150,
               color: Colors.green,
             ),
-            const TextField(
-              decoration: InputDecoration(labelText: "Peso (Kg)"),
+            TextField(
+              controller: kgField,
+              decoration: InputDecoration(
+                labelText: "Peso (Kg)",
+                errorText: kgErrorText,
+                labelStyle: const TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
             ),
-            const TextField(
-              decoration: InputDecoration(labelText: "Altura (cm)"),
+            TextField(
+              keyboardType: TextInputType.number,
+              controller: heightField,
+              decoration: InputDecoration(
+                labelText: "Altura (cm)",
+                errorText: heightErrorText,
+                labelStyle: const TextStyle(
+                  color: Colors.green,
+                ),
+              ),
+              textAlign: TextAlign.center,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -48,7 +69,44 @@ class _HomePageState extends State<HomePage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
                   )),
-              onPressed: () {},
+              onPressed: () {
+                String kgText = kgField.text;
+                double? kgValue = double.tryParse(kgText);
+
+                String heightText = heightField.text;
+                double? heightValue = double.tryParse(heightText);
+
+                if (kgValue == null || heightValue == null) {
+                  setState(() {
+                    if (kgValue == null) {
+                      kgErrorText = "Isso não é um número válido";
+                    }
+                    if(heightValue== null)
+                    {   
+                      heightErrorText = "Isso não é um número válido";
+                    }
+                  });
+                  return;
+                }
+                setState(() {
+                  kgErrorText = null;
+                  heightErrorText = null;
+                  double imcValue =
+                      kgValue / ((heightValue / 100) * (heightValue / 100));
+                  String imcText = imcValue.toStringAsFixed(2);
+                  if (imcValue < 18.5) {
+                    textMsg = "Magreza: ($imcText) ";
+                  } else if (imcValue < 25) {
+                    textMsg = "Peso Ideal: ($imcText)";
+                  } else if (imcValue < 30) {
+                    textMsg = "Sobrepeso: ($imcText), Obesidade tipo 1";
+                  } else if (imcValue < 40) {
+                    textMsg = "Obeso: ($imcText), Obesidade tipo 2";
+                  } else {
+                    textMsg = "Obesividade Greve: ($imcText), Obesidade tipo 3";
+                  }
+                });
+              },
               child: const Text(
                 "Calcular",
                 style: TextStyle(
@@ -62,7 +120,6 @@ class _HomePageState extends State<HomePage> {
               style: const TextStyle(
                 color: Colors.green,
                 fontWeight: FontWeight.w500,
-                
               ),
             ),
           ],
