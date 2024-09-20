@@ -1,3 +1,4 @@
+import 'package:conversor_moedas/models/new_request_data.dart';
 import 'package:conversor_moedas/widgets/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:conversor_moedas/conversion.dart';
@@ -16,6 +17,12 @@ class _HomePageState extends State<HomePage> {
   TextEditingController reaisController = TextEditingController();
   TextEditingController dolarController = TextEditingController();
   TextEditingController euroController = TextEditingController();
+  late NewRequestData data = NewRequestData(
+      dolar: dolar,
+      euro: euro,
+      euroController: euroController,
+      reaisController: reaisController,
+      dolarController: dolarController);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                   dolar = snapshot.data!['results']['currencies']['USD']['buy'];
                   euro = snapshot.data!['results']['currencies']['EUR']['buy'];
 
-                  return  SingleChildScrollView(
+                  return SingleChildScrollView(
                     padding: const EdgeInsets.all(10),
                     child: Column(
                       children: [
@@ -56,19 +63,28 @@ class _HomePageState extends State<HomePage> {
                           preFix: "R\$",
                           controller: reaisController,
                           label: "Reais",
+                          onChanged: (value) {
+                            conversion.newConversion(data, 0);
+                          },
                         ),
                         const Divider(),
                         FormsFieldConversion(
                           preFix: "US\$",
                           controller: dolarController,
                           label: "Dolares",
+                          onChanged: (value) {
+                            conversion.newConversion(data, 1);
+                          },
                         ),
                         const Divider(),
                         FormsFieldConversion(
                           preFix: "€",
                           controller: euroController,
                           label: "Euros",
-                        )  ,                      
+                          onChanged: (value) {
+                            conversion.newConversion(data, 2);
+                          },
+                        ),
                       ],
                     ),
                   );
@@ -77,7 +93,4 @@ class _HomePageState extends State<HomePage> {
           }),
     );
   }
-
-  
 }
-
