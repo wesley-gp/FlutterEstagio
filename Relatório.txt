@@ -67,12 +67,21 @@ Relatório seção 14:
 	Foi a continuação da seção 12, e o fim das aulas atualizadas do curso. A aplicação ainda não começou a ter compatibilidade com a web, já que as aulas desse projeto acabaram, porém já está completamente funcional no mobile, utilizei a biblioteca shared_preferences para criar a a última funcionalidade proposta para a versão mobile, que seria a que mesmo reiniciando a aplicação, a lista não se desfizesse.
 
 Relatório seção 15:
+	Apenas uma aviso que as aulas daqui para frente estão desatualizadas.
+Relatório seção 16:
 	É o começo das aulas antes da atualização null-safety do flutter, a seção se baseia em construir um aplicativo simples para calcular IMC, como ele era definitivamente mais simples que o anterior, comecei a cria-lo apenas com a aula inicial que apresentava a versão final do aplicativo. 
 	após terminar o aplicativo, fui ver as aulas de criação do mesmo, em busca de alguma funcionalidade que deixei passar, das medidas exatas de padding ou do tamanho de icones, além de algum método diferente para criar o aplicativo. Percebi que criei um sistema de validação muito diferente do professor, enquanto utilizei trycatch e trabalhei com a nulidade, o professor utilizou o validation do widget form, como ambos os metodos funcionaram, manti o meu. 
 	Como o app era bem simples, apenas aprendi sobre o widget form, que não tinha sido algo que tinha me aprofundado anteriormente. 
 
-Relatório seção 16:
+Relatório seção 17:
 	Essa seção se baseia na criação de um aplicativo que converte moedas a partir de uma API. Não parece um aplicativo dificil de ser produzido, mas vai ser interessante trabalhar mais com JSON e future, já que utilizei ele apenas no projeto lista_fazer, e de forma pouco aprofundada.
 	Creio que esse aplicativo ainda é mais fácil de ser feito do que o lista_fazer, mas é só minha concepção inicial.
 	Após o inicio do projeto, tentei criar uma organização em diversos arquivos .dart diferente, pois sinto que assim poderia evoluir mais. Hoje (19/09/2024) não consegui completar completamente o app, estou criando uma classe para arquivar diversas informações, para que assim fique mais fácil a transposição entre os arquivos dart. No momento já criei a maior parte do visual e apenas falta refatorar o codigo para que consiga inserir essa nova classe que vou criar e criar o texto de conversão. Acho que amanhã consigo finalizar esse projeto. Senti que caso o professor tivesse utilizado os conceitos apresentados no módulo 12 e 14, que foi uma aplicação com uma organização em diversos arquivos e não em diversas funções dentro do main.dart, o projeto teria sido mais desafiador, por isso e para que a aplicação fique mais organizada, resolvi fazer isso por conta própria.
 	Até o momento o que mais me chamou a atenção foi o uso do FutureBuilder, que deixa a aplicação bem mais simples de ser feita.
+O aplicativo foi terminado no dia seguinte, como tinha falado que seria possível anteriormente, porém, graças a outras demandas da empresa, acabei não atualizando o relatório, mesmo que o aplicativo já esteja pronto a quase 2 semanas. Além da utilização do FutureBuilder, outra funcionalidade é a ultilização de uma API, mesmo que ela seja bem simples, apenas retornando um JSON com as informações atualizadas. Foi um aplicativo razoavelmente simples, mas que ensina alguns  conceitos interessantes, principalmente para entendermos como rodar um aplicativo enquanto espera as informações que vem de forma remota, com um delay maior.
+
+Relatório seção 18: 
+	Seria uma seção baseada na versão desatualizada do aplicativo feito nas seções 12 e 14 "lista_fazer". Como o aplicativo é praticamente indentico, resolvi que não irei refazer essa seção, até porque o feito anteriormente tem as mesmas funcionalidades, além de algumas a mais.
+
+Relatório seção 19:
+	Essa seção se baseia em um aplicativo buscador de gifs, com uma barra de pesquisa e alguns gifts. Uma coisa que reparei é nele não existe infinity scroll, logo aperece um botão para carregar mais. 
