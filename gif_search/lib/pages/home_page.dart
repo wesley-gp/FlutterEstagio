@@ -11,6 +11,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ResponseGif responseGif = ResponseGif();
+  void onTap() {
+    setState(() {
+      responseGif.offSet += 19;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,17 +30,23 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: TextField(
-              decoration: InputDecoration(
+              onSubmitted: (value) {
+                setState(() {
+                  responseGif.search = value;
+                  responseGif.offSet = 0;
+                });
+              },
+              decoration: const InputDecoration(
                 labelText: "Pesquise aqui!",
                 labelStyle: TextStyle(
                   color: Colors.white,
                 ),
                 border: OutlineInputBorder(),
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 18,
               ),
@@ -63,7 +75,12 @@ class _HomePageState extends State<HomePage> {
                     if (snapshot.hasError) {
                       return Container();
                     } else {
-                      return GifTable(context: context, snapshot: snapshot, responseGif:responseGif,);
+                      return GifTable(
+                        context: context,
+                        snapshot: snapshot,
+                        responseGif: responseGif,
+                        onTap: onTap,
+                      );
                     }
                 }
               },
