@@ -85,3 +85,5 @@ Relatório seção 18:
 
 Relatório seção 19:
 	Essa seção se baseia em um aplicativo buscador de gifs, com uma barra de pesquisa e alguns gifts. Uma coisa que reparei é nele não existe infinity scroll, logo aperece um botão para carregar mais. 
+	Durante o desenvolvimento, me aprofundei muito mais nos conceitos de FutureBuilder do que anteriormente. Como estou criando o aplicativo em multiplos arquivos, diferentemente do curso, que cria em apenas 1, tive uma dificuldade em atualizar o request do servidor do giphy quando criava um setstate dentro de um arquivo filho. Após pesquisar sobre, descobri que o setState dentro de um arquivo filho não muda o estado do arquivo pai. Resolvi esse conflito a partir de um callback, para que a função que faça esse setState esteja dentro do arquivo pai, e não do arquivo filho. O problema foi resolvido depois disso. 
+	
