@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  ResponseGif responseGif = ResponseGif();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: FutureBuilder(
-              future: ResponseGif().getGifs(),
+              future: responseGif.getGifs(),
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.waiting:
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                     if (snapshot.hasError) {
                       return Container();
                     } else {
-                      return GifTable(context: context, snapshot: snapshot);
+                      return GifTable(context: context, snapshot: snapshot, responseGif:responseGif,);
                     }
                 }
               },
