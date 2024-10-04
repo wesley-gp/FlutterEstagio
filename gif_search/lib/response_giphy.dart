@@ -7,7 +7,7 @@ class ResponseGif {
   int offSet = 0;
   Future<dynamic> getGifs() async {
     http.Response response;
-    if (search == null) {
+    if (search == null||search!.isEmpty) {
       response = await http.get(
         Uri.parse(
             "https://api.giphy.com/v1/gifs/trending?api_key=gn2WNXIifqPi9bcOTDRtM9VKWfV6T57z&limit=20&offset=0&rating=g&bundle=messaging_non_clips"),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gif_search/pages/gif_page.dart';
 import 'package:gif_search/response_giphy.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class GifTable extends StatelessWidget {
   const GifTable({
@@ -28,15 +30,25 @@ class GifTable extends StatelessWidget {
         if (responseGif.search == null ||
             index < snapshot.data['data'].length) {
           return GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> GifPage(gifMap: snapshot.data['data'][index])),);
-            },
-            child: Image.network(
-              snapshot.data['data'][index]['images']['fixed_height']['url'],
-              fit: BoxFit.cover,
-              height: 300,
-            ),
-          );
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          GifPage(gifMap: snapshot.data['data'][index])),
+                );
+              },
+              onLongPress: () {
+                Share.share(snapshot.data['data'][index]['images']
+                    ['fixed_height']['url']);
+              },
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: snapshot.data['data'][index]['images']['fixed_height']
+                    ['url'],
+                fit: BoxFit.cover,
+                height: 300,
+              ));
         } else {
           return GestureDetector(
             onTap: addGifButton,
