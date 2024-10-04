@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  ResponseGif responseGif = ResponseGif();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,17 +24,23 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: TextField(
-              decoration: InputDecoration(
+              onSubmitted: (value) {
+                setState(() {
+                  responseGif.search = value;
+                  print(responseGif.offSet);
+                });
+              },
+              decoration: const InputDecoration(
                 labelText: "Pesquise aqui!",
                 labelStyle: TextStyle(
                   color: Colors.white,
                 ),
                 border: OutlineInputBorder(),
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 18,
               ),
@@ -42,7 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Expanded(
             child: FutureBuilder(
-              future: ResponseGif().getGifs(),
+              future: responseGif.getGifs(),
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.waiting:
@@ -62,7 +69,11 @@ class _HomePageState extends State<HomePage> {
                     if (snapshot.hasError) {
                       return Container();
                     } else {
-                      return GifTable(context: context, snapshot: snapshot);
+                      return GifTable(
+                        context: context,
+                        snapshot: snapshot,
+                        responseGif: responseGif,
+                      );
                     }
                 }
               },
