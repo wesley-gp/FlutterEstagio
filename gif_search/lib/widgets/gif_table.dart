@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:gif_search/pages/gif_page.dart';
 import 'package:gif_search/response_giphy.dart';
 
 class GifTable extends StatelessWidget {
-  const GifTable(
-      {super.key,
-      required this.context,
-      required this.snapshot,
-      required this.responseGif,
-      required this.onTap,
-      });
+  const GifTable({
+    super.key,
+    required this.context,
+    required this.snapshot,
+    required this.responseGif,
+    required this.addGifButton,
+  });
   final BuildContext context;
   final AsyncSnapshot snapshot;
   final ResponseGif responseGif;
-  final VoidCallback onTap;
+  final VoidCallback addGifButton;
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -26,6 +28,9 @@ class GifTable extends StatelessWidget {
         if (responseGif.search == null ||
             index < snapshot.data['data'].length) {
           return GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> GifPage(gifMap: snapshot.data['data'][index])),);
+            },
             child: Image.network(
               snapshot.data['data'][index]['images']['fixed_height']['url'],
               fit: BoxFit.cover,
@@ -34,7 +39,7 @@ class GifTable extends StatelessWidget {
           );
         } else {
           return GestureDetector(
-            onTap: onTap,
+            onTap: addGifButton,
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

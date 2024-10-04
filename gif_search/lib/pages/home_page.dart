@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ResponseGif responseGif = ResponseGif();
-  void onTap() {
+  void onTapAddGif() {
     setState(() {
       responseGif.offSet += 19;
     });
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                         context: context,
                         snapshot: snapshot,
                         responseGif: responseGif,
-                        onTap: onTap,
+                        addGifButton: onTapAddGif,
                       );
                     }
                 }
