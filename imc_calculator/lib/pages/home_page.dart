@@ -72,17 +72,16 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 String kgText = kgField.text;
                 double? kgValue = double.tryParse(kgText);
-                
+
                 String heightText = heightField.text;
                 double? heightValue = double.tryParse(heightText);
-                
+
                 if (kgValue == null || heightValue == null) {
                   setState(() {
                     if (kgValue == null) {
                       kgErrorText = "Isso não é um número válido";
                     }
-                    if(heightValue== null)
-                    {   
+                    if (heightValue == null) {
                       heightErrorText = "Isso não é um número válido";
                     }
                   });
@@ -130,5 +129,10 @@ class _HomePageState extends State<HomePage> {
 
   void imcNewCalc() {
     print("resetado");
+    kgField.text = "";
+    heightField.text = "";
+    setState(() {
+      textMsg = "";
+    });
   }
 }

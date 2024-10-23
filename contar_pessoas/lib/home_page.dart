@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red.shade300,
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
